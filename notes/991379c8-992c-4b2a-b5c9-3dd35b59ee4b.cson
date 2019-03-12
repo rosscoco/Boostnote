@@ -1,0 +1,34 @@
+createdAt: "2018-08-22T20:12:21.025Z"
+updatedAt: "2018-08-23T19:30:08.681Z"
+type: "MARKDOWN_NOTE"
+folder: "ced9ecdd019d4fc18feb"
+title: "RESTful APIs"
+content: '''
+  RESTful APIs
+  
+  RESTful Endpoints
+  
+  * RESTful APIs  are the entry point to retrieve and modify “Resources”. 
+  * A resource is any entity that lives in your system context,eg users and tasks are resources of our API. 
+  * Our REST API provides a way to retrieve, create, modify and delete resources (users and tasks). 
+  
+  REST defines a clear and simple way to define the API endpoints which relies on the HTTP methods or verbs: GET, POST, PUT and DELETE:
+  
+  
+      GET: will be used to retrieve resources data
+      POST: will be used to create new resources
+      PUT: will be used to update existing resources
+      DELETE: yeah, as you imagined, will be used to delete resources
+  
+  REST  tells us what  our endpoint URLs  look like. We have a resource `user`, which represents all the users in our system. We’ll need to create at least five different endpoints for the user resource:
+  
+      GET /users: will return the list of users in our system
+      POST /users: will create a new user in our system
+      GET /users/[userId]: will return the user with the given userId
+      PUT /users/[userId]: will update the data for the user with the given userId
+      DELETE /users/[userId]: will delete the user with the given userId
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

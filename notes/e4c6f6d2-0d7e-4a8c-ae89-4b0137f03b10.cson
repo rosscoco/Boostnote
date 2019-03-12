@@ -1,0 +1,49 @@
+createdAt: "2018-09-13T11:48:41.095Z"
+updatedAt: "2018-09-13T11:57:10.956Z"
+type: "MARKDOWN_NOTE"
+folder: "8568f30bb8e32294c910"
+title: "Sequelize options"
+content: '''
+  # Sequelize options
+  
+  These are properties set on the user model and are defined after the column attributes:
+  
+  ```js
+  const model -= sequelize.define('modelName',{/*attributes*/}, {
+  	//options go here
+  })
+  
+  ```
+  
+  ```js
+  sequelize
+  modelName
+  defaultScope
+  scopes
+  omitNull
+  timestamps
+  paranoid
+  underscored
+  underscoredAll
+  freezeTableName
+  name
+  name
+  name
+  indexes
+  createdAt
+  updatedAt
+  deletedAt
+  tableName
+  schema
+  engine
+  charset
+  comment
+  collate
+  initialAutoIncrement
+  hooks
+  validate
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

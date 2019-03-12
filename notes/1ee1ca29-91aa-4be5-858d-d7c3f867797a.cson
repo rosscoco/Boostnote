@@ -1,0 +1,38 @@
+createdAt: "2018-09-13T18:15:09.397Z"
+updatedAt: "2018-09-13T19:54:49.788Z"
+type: "MARKDOWN_NOTE"
+folder: "8568f30bb8e32294c910"
+title: "Sequelize Relationships and queries"
+content: '''
+  Sequelize Relationships and queries
+  
+  ModelOne.belongsTo(ModelTwo) - one to one mapping with foreign key placed in ModelOne table
+  ModelTwo.hasOne(ModeOne) - one to one mapping with the foreign key placed in ModelTwo table
+  
+  **Only a single item can be associated with this association** ie when searching for a Post you can only return the single userId referenced in that post
+  
+  * Insert a foreign key reference to an id from the `User` table to `Post` using the name userId. The default would be UserId
+  ```js
+  Post.belongsTo(User, {	as:'UserRef', foreignKey:'userId'}) 
+  ```
+  
+  Find a specfic Post and perform a Join with the User table using the userId foreign key
+  ```js
+  Post.ById('1',{ include: [User]})`				
+  ```
+  Find a specfic Post and perform a Join with the User table using the userId foreign key. We only want the `name` from the User table so we specify that in the `attribrutes` property .As we defined an alias to User as UserRef we must use the `as` property
+  	
+  ```js
+  Post.findById'1', ({ include: {
+  	model:User
+  	attributes:['name']})
+  ```
+  			
+  
+  User.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,100 @@
+createdAt: "2018-08-23T19:31:04.982Z"
+updatedAt: "2018-09-04T18:19:10.356Z"
+type: "MARKDOWN_NOTE"
+folder: "54e97bf86c9ba72bef2a"
+title: "User Controller"
+content: '''
+  # User Controller
+  
+  Create methods that will be mapped to endpoints in our user routes
+  
+  **load**
+  * load will be used as a pre middleware by the following endpoints:
+  	* GET /users/userid
+  	* PUT /users/userid
+  	* DELETE /user/userid
+  * The user data will be added to the request and then passed to the next middleware function that is handling the GET/PUT/DELETE request
+  
+  **get**
+  * Implements the `GET /users/userId` endpoint
+  * receives the user data from the preceding `load` middleware and sends it back as json
+  
+  **create**
+  * implementation for the `POST /users` endpoint
+  * calls `create` on the actual User model defined in /models/user*
+  
+  **update**
+  * implementation for the `PUT /users/userId` endpoint*
+  * receives the user data from the preceding `load` middleware 
+  * returns a `204 No Content` response to indicate a successful change
+  
+  **list**
+  * Implements the `GET /users` endpoint
+  * restricts results to 50
+  
+  **remove**
+  * implements the `DELETE /users/userId` endpoint and returns 204 No Content when it’s successful.
+  
+  
+  
+  
+  **server/controllers/user.js**
+  ```js
+  import User from '../models/user';
+  
+  function load(req, res, next, id) {
+    User.findById(id)
+      .exec()
+      .then((user) => {
+        req.dbUser = user;
+        return next();
+      }, (e) => next(e));
+  }
+  
+  function get(req, res) {
+    return res.json(req.dbUser);
+  }
+  
+  function create(req, res, next) {
+    User.create({
+        username: req.body.username,
+        password: req.body.password
+      })
+      .then((savedUser) => {
+        return res.json(savedUser);
+      }, (e) => next(e));
+  }
+  
+  function update(req, res, next) {
+    const user = req.dbUser;
+    Object.assign(user, req.body);
+  
+    user.save()
+      .then((savedUser) => res.sendStatus(204),
+        (e) => next(e));
+  }
+  
+  function list(req, res, next) {
+    const { limit = 50, skip = 0 } = req.query;
+    User.find()
+      .skip(skip)
+      .limit(limit)
+      .exec()
+      .then((users) => res.json(users),
+        (e) => next(e));
+  }
+  
+  function remove(req, res, next) {
+    const user = req.dbUser;
+    user.remove()
+      .then(() => res.sendStatus(204),
+        (e) => next(e));
+  }
+  
+  export default { load, get, create, update, list, remove };
+  
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

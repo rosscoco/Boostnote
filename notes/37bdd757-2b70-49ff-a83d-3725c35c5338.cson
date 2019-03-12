@@ -1,0 +1,28 @@
+createdAt: "2018-08-23T19:29:02.031Z"
+updatedAt: "2018-08-23T19:29:04.537Z"
+type: "MARKDOWN_NOTE"
+folder: "54e97bf86c9ba72bef2a"
+title: "Folder structure"
+content: '''
+  ## Folder structure
+  ```js
+  ├── config
+  │   ├── env
+  │   │   ├── development.js
+  │   │   └── index.js
+  │   └── express.js
+  ├── gulpfile.babel.js
+  ├── index.js
+  ├── package.json
+  └── server
+      └── routes
+          └── controllers
+          
+      └── models
+          ├── task.js
+          └── user.js
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

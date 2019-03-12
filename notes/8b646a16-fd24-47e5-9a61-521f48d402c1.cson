@@ -1,0 +1,36 @@
+createdAt: "2018-10-02T20:21:31.066Z"
+updatedAt: "2018-11-27T18:40:22.059Z"
+type: "MARKDOWN_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "Managing Dates"
+content: '''
+  Managing Dates
+  
+  Convert strings to dates:
+  
+  ``````str_to_date('DEC-21-1980' , '%b-%d-%Y')``````
+  
+  Date Short codes
+  
+  ```SQL
+  a The short weekday name, such as Sun, Mon, ...
+  %b The short month name, such as Jan, Feb, ...
+  %c The numeric month (0..12)
+  %d The numeric day of the month (00..31)
+  %f The number of microseconds (000000..999999)
+  %H The hour of the day, in 24-hour format (00..23)
+  %h The hour of the day, in 12-hour format (01..12)
+  %i The minutes within the hour (00..59)
+  %j The day of year (001..366)
+  %M The full month name (January..December)
+  %m The numeric month
+  %p AM or PM
+  %s The number of seconds (00..59)
+  %W The full weekday name (Sunday..Saturday)
+  %w The numeric day of the week (0=Sunday..6=Saturday)
+  %Y The four-digit year
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

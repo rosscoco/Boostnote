@@ -1,0 +1,35 @@
+createdAt: "2018-08-22T19:48:36.861Z"
+updatedAt: "2018-08-23T19:29:27.228Z"
+type: "MARKDOWN_NOTE"
+folder: "e4161fdc838dcc9e47dd"
+title: "Node - Configuring your runtime environment"
+content: '''
+  Node - Configuring your runtime environment
+  
+  `config/env/index.js`
+  
+  ```js
+  const env = process.env.NODE_ENV || 'development';
+  const config = require(`./${env}`);
+  
+  export default config;
+  ```
+  this will import a file dependent on the NODE_ENV value but will default to development.js if not set
+  
+  `config/env/development.js`
+  
+  ```js
+  export default {
+    env: 'development',
+    db: 'mongodb://localhost/node-es6-api-dev',
+    port: 3000
+  };```
+  
+'''
+tags: [
+  "NODE_ENV"
+  "nodejs"
+  "config"
+]
+isStarred: false
+isTrashed: false

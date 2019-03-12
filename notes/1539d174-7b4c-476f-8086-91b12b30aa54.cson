@@ -1,0 +1,28 @@
+createdAt: "2018-09-13T11:38:43.640Z"
+updatedAt: "2018-09-13T11:57:39.826Z"
+type: "MARKDOWN_NOTE"
+folder: "8568f30bb8e32294c910"
+title: "Sequelize"
+content: '''
+  #Sequelize
+  
+  Create a sqlite connection:
+  
+  \'''js
+  const connection = new Sequelize('db', 'user', 'pass', {	
+  	host: 'localhost',
+  	dialect: 'sqlite',
+  	storage: 'db.sqlite',
+  	operatorsAliases: false,																							// query operators can be given string shortcuts. Disallowing this option is more secure
+  	define: {																																													// set default properties on a model when it is created
+  		freezeTableName: false,																				//a User model will be defined in the Users table. Freeze table names if you do not want this renaming to occur
+  	}
+  });
+  
+  \'''
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

@@ -1,0 +1,49 @@
+createdAt: "2018-10-02T19:15:08.713Z"
+updatedAt: "2018-10-02T20:18:42.496Z"
+type: "MARKDOWN_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "TABLES"
+content: '''
+  # TABLES
+  
+  #### Create a table with a primary key
+  
+  ```SQL
+  CREATE TABLE first_table
+  (
+  	prop_id SMALLINT UNSIGNED,
+  	name VARCHAR(30),
+  	address VARCHAR(30),
+  	isAwesome VARCHAR(1)
+  	CONSTRAINT pk_first_table PRIMARY KEY (prop_id)
+  );
+  ```
+  
+  #### Create a table with a multi column primary key and a foreign key
+  ```SQL
+  CREATE TABLE other_table
+  (
+  	prop_id SMALLINT UNSIGNED,
+  	name VARCHAR(30),
+  	CONSTRAINT pk_other_table PRIMARY KEY (prop_id,name)
+  	CONSTRAINT fk_foreign_key_identifier FOREI|GN KEY (prop_id)
+  		REFERENCES first_table (prop_id)
+  );
+  ```
+  #### Add or modify a column to an already table
+  ```SQL
+  ALTER TABLE first_table ADD birth_date DATE;
+  ALTER TABLE first_table CHANGE isAwesome ENUM('Y','N');
+  ```
+  #### Update multiple values in a table using SET
+  UPDATE first_table
+  	SET address = 'cnfvifioew',
+  	name = 'Paulo'
+  WHERE prop_id = 1;
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

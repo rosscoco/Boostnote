@@ -1,0 +1,41 @@
+createdAt: "2018-09-13T11:48:08.775Z"
+updatedAt: "2018-09-13T11:55:25.432Z"
+type: "MARKDOWN_NOTE"
+folder: "8568f30bb8e32294c910"
+title: "Sequelize attributes"
+content: '''
+  # Sequelize attributes
+  
+  
+  ```js
+  const model = sequelize.define('modelName', {
+  		columnName:{						//attributes go in the column definitions
+  			autoIncrement:...
+  			primaryKey:...
+  		}
+  })
+  ```
+  
+  ```js
+  column.autoIncrement
+  column.allowNull
+  column.defaultValue
+  column.primaryKey
+  
+  column.type
+  column.unique
+  column.field
+  column.comment
+  column.references
+  column.references
+  column.references
+  column.onUpdate
+  column.onDelete
+  column.get
+  column.set
+  
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

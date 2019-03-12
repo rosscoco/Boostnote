@@ -1,0 +1,22 @@
+createdAt: "2019-03-04T19:06:45.519Z"
+updatedAt: "2019-03-04T19:08:15.810Z"
+type: "MARKDOWN_NOTE"
+folder: "cc11b1a015188b133274"
+title: "Dictionary"
+tags: [
+  "Dictionary"
+]
+content: '''
+  Dictionary
+  
+  
+  ```py
+  dict = {}
+  
+  dict.get('value',)
+  
+  ```
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

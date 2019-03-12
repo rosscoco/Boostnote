@@ -1,0 +1,31 @@
+createdAt: "2019-03-11T15:31:24.374Z"
+updatedAt: "2019-03-11T15:39:12.081Z"
+type: "MARKDOWN_NOTE"
+folder: "cc11b1a015188b133274"
+title: "Regex"
+tags: []
+content: '''
+  Regex
+  
+  ```python
+  import re	#regex module
+  
+  regex = re.compile(r'\\d{4}') 	
+  ```
+  
+  Create a regex object using the compile() method from the re module
+  
+  prepend the regex string with 'r' to makle it a raw string that does not need to havce special characters escaped
+  
+  
+  search returns a Match object
+  
+  ```python
+  match = regex.search('Where is the 4 digit number 1234')	
+  ```
+  
+  
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,25 @@
+createdAt: "2018-10-02T21:40:26.400Z"
+updatedAt: "2018-10-02T21:41:01.267Z"
+type: "SNIPPET_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "Show all Tables and columns"
+description: "Show all Tables and columns"
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      
+      ```SQL
+      SELECT TABLE_NAME 'Table', COLUMN_NAME 'Field', COLUMN_TYPE 'Type', IS_NULLABLE 'Null',
+        COLUMN_KEY 'Key', COLUMN_DEFAULT 'Default', EXTRA 'Extra'
+      FROM information_schema.columns
+      WHERE table_schema = 'bank'
+      ORDER BY TABLE_NAME;
+      ```
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

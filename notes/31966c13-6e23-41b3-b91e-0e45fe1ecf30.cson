@@ -1,0 +1,99 @@
+createdAt: "2018-08-22T18:42:25.344Z"
+updatedAt: "2018-09-04T18:20:29.338Z"
+type: "MARKDOWN_NOTE"
+folder: "f9ef1d1b9b39aa6dcae2"
+title: "Mongo Basics"
+content: '''
+  # Mongo Basics
+  
+  ### Connecting 
+  
+  ```js
+  import config from './config/env';
+  
+  mongoose.connect(config.db);
+  mongoose.connection.on('error', () => {
+    throw new Error(`unable to connect to database: ${config.db}`);
+  });
+  mongoose.connection.on('connected', () => {
+    console.log(`Connected to database: ${config.db}`);
+  });
+  
+  if (config.env === 'development') {
+    mongoose.set('debug', true);
+  }
+  ```
+  
+  
+  ### Schema 
+  * Create a Schema for your object and its values. Export it as a Model
+  
+  ```js
+  import mongoose from 'mongoose';
+  
+  const UserSchema = new mongoose.Schema({
+    key1: String,
+    key2:{ ... }
+  });
+  
+  export default mongoose.model('User', UserSchema);
+  ```
+  ##### Schema keys
+  * Schema keys are user defined or required values in a Schema object
+  * A schema key can have an object as it's value.  
+  * Reserved keys here are:
+  	* `type`	- mongoose.Schema.Types.String, Number, Date, Buffer, Boolean, Mixed, ObjectId, Array, Decimal128, Map
+  	* `required` Boolean
+  	* `trim` Boolean
+  	*  `ref` - If of type ObjectId then what object does it refer to. Use the plural of the schema type eg 'users' for Schema User
+  		*  	>"Mongoose automatically looks for the plural version of your model name. Thus, for the example above, the model User is for the users collection in the database."
+  * 
+  
+  ##### Schema methods
+  * isModified`
+  
+  * **Instance methods** are added to the UserSchema.methods object 
+  ```js
+  UserSchema.methods.myNewMethod = function(value, done) {
+  	var result;
+  	done(result)	//call done when method complete
+  }
+  ```
+  ###### Model Methods
+  
+  * `findById`
+  * `save`
+  * `create`
+  **
+  
+  ### Middleware
+  
+  >“Middleware are functions which are passed control during execution of asynchronous functions”
+  
+  * `pre` and `post` hooks allow code execution prior/post to an event 
+  * to continue execution of the middle ware chain call `next()`*
+  * If there is an error return that error as a parameter to the `next()` call.
+  ```js
+  UserSchema.pre('save', function (next) {
+    const user = this;
+  
+    if (!user.isModified('password')) {
+      return next();  
+    }
+  ```
+  
+  * The `next()` method will call the proceeding  middleware function
+  
+  
+  ### Events
+  
+  + These are the events available to pre hooks
+    - `save`
+    - `update`
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

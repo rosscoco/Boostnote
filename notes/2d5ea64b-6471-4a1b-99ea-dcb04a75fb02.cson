@@ -1,0 +1,59 @@
+createdAt: "2018-08-22T19:08:55.857Z"
+updatedAt: "2018-09-06T18:10:40.638Z"
+type: "MARKDOWN_NOTE"
+folder: "54e97bf86c9ba72bef2a"
+title: "_Instructions"
+content: '''
+  # _Instructions
+  
+  npm install --save apidoc  bcrypt express moch mongoose    
+  npm install --save-dev babelcli eslint gulp gulp-babel gulp-nodemon
+  
+  
+  
+  * create index.js using the express skeleton
+  
+  * Create user.js containing a UserSchema
+  * Use bcrypt to hash the us	ers password:
+  
+  
+  * Add an instance method to your user schema to check passwords:
+  
+  * Create a Task schema with the keys `user`, `description`, `done`
+  	* `user` has a type of `mongoose.Schema.Types.ObjectId`, is required and has the property `ref` of users
+  	* `description` has a trype of `String`, is `required` and will `trim`
+  	* `done` has a type of `Boolean` and a value of false for `default`
+  	
+  
+  * Make a configuration file that detects the running environment
+  * Update server.js to pull in the port from the `config/env/index.js` file
+  * create a routes.js file and tell express to use it 
+  * add body-parser middleware to use  json, urlencoded
+  * Create the server/controllers/user.js file to hold the api methods for user operations. Methods will be:
+  	* `load`
+  	* `get`
+  	* `create`
+  	* `update`
+  	* `list`
+  	* `remove`
+  		
+  
+  * create the routes/controllers/user.js to define our RESTful endpoints. This exports an express.Router() object that will be used in our express erver config
+  * We will map the below routes to the methods in our Users controller
+  		* GET /api/users
+  		* POST /api/users
+  		* GET /api/users/:userId 
+  		* PUT /api/users/:userId 
+  		* DELETE /api/users/:userId 
+  
+  * Import the routes into the server setup and tell express to use them for anything under /users
+  * Create the model/task.js and route/controller/task files. They will have similar functionality to the User model and controller
+  
+  
+  	
+  		
+  	
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,23 @@
+createdAt: "2018-10-02T19:06:53.353Z"
+updatedAt: "2018-10-02T19:08:21.831Z"
+type: "MARKDOWN_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "create a new database and admin user"
+content: '''
+  create a new database and admin user
+  
+  ```sql
+  mysql -u root -p;
+  
+  create database bank;
+  
+  grant all privileges on bank.* to 'lrnsql'@'localhost' as 'xyz';
+  
+  use bank;
+  ```
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,45 @@
+createdAt: "2018-08-19T18:06:59.198Z"
+updatedAt: "2018-08-22T18:30:31.423Z"
+type: "MARKDOWN_NOTE"
+folder: "af97e723304263899fd2"
+title: "npm install --save apidoc  bcrypt express moch mongoose"
+content: '''
+  npm install --save apidoc  bcrypt express moch mongoose    
+  npm install --save-dev babelcli eslint gulp gulp-babel gulp-nodemon
+  ## Server.js
+  <details><summary>Server.js
+  </summary>
+  import express from 'express';
+  
+  const app = express();
+  
+  app.get('/', (req, res) => res.send('HTTP OK'));
+  
+  export default app;
+  </details>
+  
+  <details><summary>Boostnote is a notepad corresponding to markdown notation, which is a tool for organizing and sharing information.</summary>
+  
+  - Features - <br>
+  
+  · Search function to find memos in one shot
+  
+  · Supports markdown notation <br>
+  
+  · Support for Mac, Windows, Linux, iOS, Android <br>
+  
+  · Export and import to Plain text (.txt), Markdown (.md) format <br>
+  
+  · Supports PDF saving <br>
+  
+  · Can be used offline <br>
+  
+  · Synchronize to dropbox etc. with setting <br>
+  
+  · Supports theme colors and numerous fonts <br>
+  
+  </details>
+'''
+tags: []
+isStarred: false
+isTrashed: true

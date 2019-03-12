@@ -1,0 +1,31 @@
+createdAt: "2018-10-02T21:53:21.518Z"
+updatedAt: "2018-10-02T22:02:18.064Z"
+type: "MARKDOWN_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "QUERIES"
+content: '''
+  QUERIES
+  
+  There are 6 clauses that can be used with a SELECT statement
+  
+  **SELECT**
+  Determines which columns to include in the query’s result set
+  
+  **FROM**
+  Identifies the tables from which to draw data and how the tables should be joined.
+  
+  **WHERE**
+  Filters out unwanted data
+  
+  **GROUP BY**
+  Used to group rows together by common column values
+  
+  **HAVING**
+  Filters out unwanted groups
+  
+  **ORDER BY**
+  Sorts the rows of the final result set by one or more columns
+'''
+tags: []
+isStarred: false
+isTrashed: false

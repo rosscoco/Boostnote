@@ -1,0 +1,57 @@
+createdAt: "2018-08-23T19:32:59.052Z"
+updatedAt: "2018-08-23T21:29:58.396Z"
+type: "MARKDOWN_NOTE"
+folder: "54e97bf86c9ba72bef2a"
+title: "User Route"
+content: '''
+  # User Route
+  
+  Here we define the verbs assigned to our routes
+  
+  These routes will be mounted under the `/users` path in our Express setup
+  
+  Only 2 routes are defined `/` [technically `/users/`] and  `/:userid`
+  
+  Assign the `GET` `PUT` `POST` `DELETE` verbs to the associated methods in the User Controller defined in `../controllers/user`
+  
+  use the `param` method on the router object to insert a middleware function prior to the execution of the route function:
+  ```js
+  router.param('userId', userCtrl.load);
+  ```
+  
+  Anytime a `userId` URL parameter is passed to a route invoke the `load` function on the `User Controller` first. Then you can pass the results from that function to the middleware that was actually invoked ie the get/update/remove methods.
+  
+  **server/routes/users.js**
+  ```js
+  import express from 'express';
+  import userCtrl from '../controllers/users';
+  
+  const router = express.Router();
+  
+  router.route('/')								//base route is appended to /users as defined in express setup
+    .get(userCtrl.list)				/** GET /api/users - Get list of users */
+    .post(userCtrl.create); 		/** POST /api/users - Create new user */
+  
+  router.route('/:userId')  
+    .get(userCtrl.get)				/** GET /api/users/:userId - Get user */
+    .put(userCtrl.update) 		/** PUT /api/users/:userId - Update user */
+    .delete(userCtrl.remove);  /** DELETE /api/users/:userId - Delete user */
+  
+  /** Load user when API with userId route parameter is hit */
+  router.param('userId', userCtrl.load);
+  
+  export default router;
+  ```
+  
+  **config/express.js**
+  ```js
+  import userRoutes from '../server/routes/users.js';
+  app.use('/users',userRoutes);	
+  ```
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

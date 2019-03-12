@@ -1,0 +1,62 @@
+createdAt: "2018-08-22T18:38:59.093Z"
+updatedAt: "2018-09-09T15:05:10.421Z"
+type: "MARKDOWN_NOTE"
+folder: "ced9ecdd019d4fc18feb"
+title: "Express Basics"
+content: '''
+  # Express Basics
+  
+  
+  ## Initialise app:
+  
+  ```js
+  import express from 'express';
+  const app = express();
+  app.get('/', (req, res) => res.send('HTTP OK'));
+  export default app;
+  ```
+  
+  ## Routes
+  
+  Create a file to define the API access points:
+  ##### ./routes.js
+  
+  ```js
+  import express from 'express;
+  const router = express.Router();
+  
+  router.route('/api-status', (req,res)=>{
+  	res.json({ status:'ok' });
+  })
+  
+  export default router
+  ```
+  
+  * An express.Router() lets us group nested routes together
+  
+  ##### ./server.js
+  ```js
+  import express from 'express';
+  import routes from './routes';
+  
+  const app=express();
+  
+  app.use('/api',routes);		//route now accessible through /api/api-status
+  ```
+  
+  ## Middleware
+  #### body-parser
+  >Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+  >
+  **./server.js**
+  ```js
+  import bodyParser from 'body-parser'
+  ...
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded( {extended:true()} );
+  ```
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

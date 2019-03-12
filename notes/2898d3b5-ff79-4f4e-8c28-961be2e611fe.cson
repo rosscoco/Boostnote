@@ -1,0 +1,34 @@
+createdAt: "2018-10-11T18:05:13.848Z"
+updatedAt: "2018-10-11T18:06:45.561Z"
+type: "MARKDOWN_NOTE"
+folder: "3a8b178644eb697aa42c"
+title: "Aggregate Functions"
+content: '''
+  ## Aggregate Functions
+  
+  ```js
+  AVG() 				// Return the average value of the argument
+  BIT_AND() 		// Return bitwise AND
+  BIT_OR() 	//Return bitwise OR
+  BIT_XOR() 	//Return bitwise XOR
+  COUNT() 	//Return a count of the number of rows returned
+  COUNT(DISTINCT) 	//Return the count of a number of different values
+  GROUP_CONCAT() 	//Return a concatenated string
+  JSON_ARRAYAGG() 	//Return result set as a single JSON array
+  JSON_OBJECTAGG() 	//Return result set as a single JSON object
+  MAX() 	//Return the maximum value
+  MIN() 	//Return the minimum value
+  STD() 	//Return the population standard deviation
+  STDDEV() 	//Return the population standard deviation
+  STDDEV_POP() 	//Return the population standard deviation
+  STDDEV_SAMP() 	//Return the sample standard deviation
+  SUM() 	//Return the sum
+  VAR_POP() 	//Return the population standard variance
+  VAR_SAMP() //Return the sample variance
+  VARIANCE() 	//Return the population standard variance 
+  
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

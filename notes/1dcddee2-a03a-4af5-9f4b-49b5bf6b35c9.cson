@@ -1,0 +1,51 @@
+createdAt: "2018-09-11T11:15:25.106Z"
+updatedAt: "2018-09-11T11:26:14.963Z"
+type: "MARKDOWN_NOTE"
+folder: "54e97bf86c9ba72bef2a"
+title: "Validation using middleware"
+content: '''
+  # Validation using middleware
+  
+  * `npm install --save express-validation joi` 
+  	* joi is the library for creating our validation rules
+  
+  * create joi validation methods for each endpoint
+  	
+  ##### server/routes/validation/task.js
+  ```js
+  export default {
+    // POST /api/tasks
+    createTask: {
+      body: {
+        user: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required(),
+        description: Joi.string().required(),
+        done: Joi.boolean()
+      }
+    },
+  
+    // GET-PUT-DELETE /api/tasks/:taskId
+    getTask: {
+      params: {
+        taskId: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
+      }
+    },
+  
+    // PUT /api/tasks/:taskId
+    updateTask: {
+      body: {
+        user: Joi.string().regex(/^[0-9a-fA-F]{24}$/),
+        description: Joi.string(),
+        done: Joi.boolean()
+      }
+    }
+  };
+  ```
+  
+  * For POST requests validate against the `body` of the request ie `req.body.user`.  
+  * For `GET` `PUT` `DELETE` requests validate against the params specified in the url
+  
+  * the `express-vaildation` mware expects an object with `body` `params` `query` `header` `cookies` properties defined on it.  
+'''
+tags: []
+isStarred: false
+isTrashed: false

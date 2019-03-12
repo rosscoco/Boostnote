@@ -1,0 +1,30 @@
+createdAt: "2018-08-28T19:15:38.799Z"
+updatedAt: "2018-08-28T19:26:12.606Z"
+type: "MARKDOWN_NOTE"
+folder: "ced9ecdd019d4fc18feb"
+title: "Request object"
+content: '''
+  #Request object
+  
+  The req object represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on.
+  
+  * `req.app` reference to the express app
+  * `req.body` Contains key-value pairs of data submitted in the request body. Populated by body-parser middleware
+  * `req.method` Contains a string corresponding to the HTTP method of the request: GET, POST, PUT, and so on.
+  * `req.params` An object containing the **named parameters** that are defined by express on a route
+  	* These are **not** the URL variables
+  	* define a route such as
+  	```js
+  	app.get('/users/:userId/books/:bookId', function( req,res){ ... }
+  	```
+  	*	req.params has access to the `:userId` and `:books` parameters
+  	*	Any changes made to the req.params object in a middleware or route handler will be reset.
+  
+  *	req.query is an object contaiming the query parameters in the URL
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

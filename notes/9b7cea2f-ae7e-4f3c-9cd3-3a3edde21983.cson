@@ -1,0 +1,46 @@
+createdAt: "2018-08-27T17:01:57.160Z"
+updatedAt: "2018-08-27T17:19:16.181Z"
+type: "MARKDOWN_NOTE"
+folder: "f9ef1d1b9b39aa6dcae2"
+title: "Hashing user passwords"
+content: '''
+  #Hashing user passwords
+  * In the Users schema create a pre hook for the `save` event
+  * Check if the user schema `isModified`
+  * bcrypt stores the salt as part of the hashed password
+  	* This is different from encrypting a password. That is a two way operation. This hash is only meant to be a one way operation.
+  
+  ```js
+  
+  UserSchema.pre('save', function (next) {
+   const user = this;
+  
+   if (!user.isModified('password')) {
+    return next();
+   }
+   
+   bcrypt.genSalt(10, (err, salt) => {
+    if (err) return next(err);
+     bcrypt.hash(user.password, salt, (hashErr, hash) => {
+      if (hashErr) return next(hashErr);  
+      user.password = hash;
+      next();
+     });
+    });
+  });
+  ```
+  
+  To check an entered password create an instance method on the scema:
+  
+  ```js
+  UserSchema.methods.comparePassword = function (toCompare, done) {
+    bcrypt.compare(toCompare, this.password, (err, isMatch) => {
+      if (err) done(err);
+      else done(err, isMatch);
+    });
+  };
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

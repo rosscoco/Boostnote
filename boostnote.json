@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "key": "af97e723304263899fd2",
+      "color": "#1278BD",
+      "name": "Default"
+    },
+    {
+      "key": "e4161fdc838dcc9e47dd",
+      "color": "#30D5C8",
+      "name": "Node"
+    },
+    {
+      "key": "54e97bf86c9ba72bef2a",
+      "color": "#FF8E00",
+      "name": "Express/MongdoDB Simple Recipe"
+    },
+    {
+      "key": "ced9ecdd019d4fc18feb",
+      "color": "#30D5C8",
+      "name": "Express"
+    },
+    {
+      "key": "f9ef1d1b9b39aa6dcae2",
+      "color": "#2BA5F7",
+      "name": "MongoDB"
+    },
+    {
+      "key": "8568f30bb8e32294c910",
+      "color": "#3FD941",
+      "name": "sqlite"
+    },
+    {
+      "key": "3a8b178644eb697aa42c",
+      "color": "#3FD941",
+      "name": "MYSQL"
+    },
+    {
+      "key": "cc11b1a015188b133274",
+      "color": "#2BA5F7",
+      "name": "Python"
+    }
+  ],
+  "version": "1.0"
+}

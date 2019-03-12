@@ -1,0 +1,25 @@
+createdAt: "2018-08-28T19:29:38.991Z"
+updatedAt: "2018-08-28T19:39:36.715Z"
+type: "MARKDOWN_NOTE"
+folder: "ced9ecdd019d4fc18feb"
+title: "Response object"
+content: '''
+  
+  # Response object
+  
+  The res object represents the HTTP response that an Express app sends when it gets an HTTP request.
+  
+  * `res.send(body)` - sends the HTTP response
+  	* The body can be a `Buffer` `String` `Object` or an `Array`
+  
+  * `res.sendFile(path [, options] [, fn])` Transfers the file at the given path. Sets the Content-Type response HTTP header field based on the filename’s extension. 
+  	* the callback function fn(err)is onvoked on transfer complete or on error occurs. 
+  		* 	If the callback function is specified and an error occurs, the callback function must explicitly handle the response process either by ending the request-response cycle, or by passing control to the next route.
+  
+  * `res.status(code)` Sets the HTTP status for the response. It is a chainable alias of Node’s response.statusCode.
+  
+  * `res.json([body])`  Sends a JSON response. This method sends a response (with the correct content-type) that is the parameter converted to a JSON string using JSON.stringify().
+'''
+tags: []
+isStarred: false
+isTrashed: false

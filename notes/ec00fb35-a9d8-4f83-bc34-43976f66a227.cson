@@ -1,0 +1,64 @@
+createdAt: "2018-09-13T11:46:03.508Z"
+updatedAt: "2018-09-13T12:44:26.019Z"
+type: "MARKDOWN_NOTE"
+folder: "8568f30bb8e32294c910"
+title: "Sequelize"
+content: '''
+  # Sequelize
+  
+  Create a sqlite connection:
+  
+  ```js
+  const connection = new Sequelize('db', 'user', 'pass', {	
+  	host: 'localhost',
+  	dialect: 'sqlite',
+  	storage: 'db.sqlite',
+  	operatorsAliases: false,																							// query operators can be given string shortcuts. Disallowing this option is more secure
+  	define: {																																													// set default properties on a model when it is created
+  		freezeTableName: false,																				//a User model will be defined in the Users table. Freeze table names if you do not want this renaming to occur
+  	}
+  });
+  
+  ```
+  
+  create a model that mapsm to a table:
+  
+  ```js
+  const User = connection.define('User', {
+  		uid: {
+  			type: Sequelize.UUID,							
+  			primaryKey: true,				//a table will be created with a default primary key of 'id' but you can change that
+  			defaultValue: Sequelize.UUIDV4,
+  			allowNull: false
+  		},
+  		name: {
+  			type: Sequelize.STRING,
+  			validate: {							//will return an error if length is less than 3
+  				len: [3]
+  			}
+  		},
+  	bio: {
+  		type: Sequelize.TEXT,
+  		validate: {
+  			contains: {
+  				args: ['foo'],
+  				msg: 'Error. Bio must contain the word foo'
+  			}
+  		}
+  	},
+  	{
+  		hooks:{									//lifecycle hooks for working with data events
+  			beforeValidate:(user) {...},
+  			afterValidate:(user) {...},
+  			beforeUdate:(user) {...},
+  			afterUdate:(user) {...},
+  		}
+  	}
+  });
+  
+  ```
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

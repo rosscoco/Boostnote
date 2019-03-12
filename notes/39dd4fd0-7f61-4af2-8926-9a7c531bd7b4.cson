@@ -1,0 +1,18 @@
+createdAt: "2018-08-22T18:23:39.349Z"
+updatedAt: "2018-08-22T18:42:59.653Z"
+type: "MARKDOWN_NOTE"
+folder: "af97e723304263899fd2"
+title: "npm install --save apidoc  bcrypt express moch mongoose"
+content: '''
+  npm install --save apidoc  bcrypt express moch mongoose    
+  npm install --save-dev babelcli eslint gulp gulp-babel gulp-nodemon
+  
+  ## Server.js
+  \'''js
+  
+  \'''
+    </details>
+'''
+tags: []
+isStarred: false
+isTrashed: true

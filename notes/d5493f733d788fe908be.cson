@@ -1,0 +1,45 @@
+type: "SNIPPET_NOTE"
+folder: "e4161fdc838dcc9e47dd"
+title: "An express/mongodb recipe"
+description: "An express/mongodb recipe"
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      npm install --save apidoc  bcrypt express moch mongoose    
+      npm install --save-dev babelcli eslint gulp gulp-babel gulp-nodemon
+      
+      <details><summary>## Server.js</summary>
+      
+      * create server.js using the express skeleton
+      * Create user.js containing a UserSchema
+      *Use bcrypt to hash the users password
+      
+      ```js
+      UserSchema.pre('save', function (next) {
+        const user = this;
+      
+        if (!user.isModified('password')) {
+          return next();
+        }
+        bcrypt.genSalt(10, (err, salt) => {
+          if (err) return next(err);
+          bcrypt.hash(user.password, salt, (hashErr, hash) => {
+            if (hashErr) return next(hashErr);  
+            user.password = hash;
+            next();
+          });
+        });
+      });
+      
+      ```
+      
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: true
+createdAt: "2017-10-26T17:02:52.603Z"
+updatedAt: "2018-08-22T19:23:05.467Z"
